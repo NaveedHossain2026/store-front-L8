@@ -108,22 +108,36 @@ export default {
 </script>
 
 <style>
+/* Best Buy Brand Identity */
+:root {
+  --bb-blue: #0046be;
+  --bb-yellow: #fff200;
+  --bb-white: #ffffff;
+  --bb-black: #000000;
+}
+
 body {
-  background-image: url('@/assets/algonquin.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* Keeps the background in place when scrolling */
+  /* Remove the algonquin.jpg and use a clean, professional retail light gray */
+  background-color: #f4f6f8;
   margin: 0;
   padding: 0;
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 120px;
+  color: #1d252c;
+  /* Reduced margin to accommodate a standard fixed header */
+  margin-top: 80px; 
+}
+
+/* Updated Header/Footer to Best Buy Blue */
+header, .navbar, footer {
+  background-color: var(--bb-blue) !important;
+  color: var(--bb-white);
+  padding: 1rem;
 }
 
 footer {
@@ -131,47 +145,24 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #0a5620;
-  color: #fff;
-  padding: 1rem;
-  margin: 0;
+  font-size: 0.9rem;
+  border-top: 4px solid var(--bb-yellow);
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  margin: 0 1rem;
-}
-
-a {
-  color: #fff;
-  text-decoration: none;
-}
-
+/* Button Customization - Best Buy Yellow is the "Call to Action" color */
 button {
-  padding: 10px;
-  background-color: #005f8b;
-  color: #fff;
+  padding: 10px 20px;
+  background-color: var(--bb-yellow);
+  color: var(--bb-black);
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
+  font-weight: bold;
   cursor: pointer;
-  height: 42px;
+  transition: background-color 0.2s;
 }
 
-.product-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+button:hover {
+  background-color: #e5d900; /* Slightly darker yellow on hover */
 }
 
 .product-card {
@@ -180,103 +171,38 @@ button {
   align-items: center;
   justify-content: space-between;
   margin: 1rem;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
-.product-card img {
-  max-width: 100%;
-  margin-bottom: 1rem;
-}
-
-.product-card a {
-  text-decoration: none;
-  color: #333;
+  padding: 1.5rem;
+  border: 1px solid #e0e6ef;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .product-card h2 {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.product-card p {
-  margin-bottom: 1rem;
-}
-
-.product-controls {
-  display: flex;
-  align-items: center;
-  margin-top: 0.5rem;
-}
-
-.product-controls p {
-  margin-right: 20px;
-}
-
-.product-controls button:hover {
-  background-color: #005f8b;
+  font-size: 1.1rem;
+  color: var(--bb-blue);
+  min-height: 3rem;
 }
 
 .product-price {
   font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.quantity-input {
-  width: 50px;
-  height: 30px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 5px;
-  margin-right: 10px;
+  font-size: 1.4rem;
+  color: #c70000; /* Standard retail price red */
 }
 
 .shopping-cart {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
-.shopping-cart h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.shopping-cart-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.shopping-cart-table th,
-.shopping-cart-table td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-.shopping-cart-table th {
-  font-weight: bold;
-}
-
-.shopping-cart-table td img {
-  display: block;
-  margin: 0 auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  max-width: 1000px;
+  margin: 20px auto;
 }
 
 .checkout-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #007acc;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.checkout-button:hover {
-  background-color: #005f8b;
+  background-color: var(--bb-yellow);
+  color: var(--bb-black);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 </style>
